@@ -6,16 +6,16 @@
  * Time: 17:14
  */
 
-function task1 ($data,$true=NULL) {
+function task1 ($data,$true=false) {
 
-    if(!isset($true)) {
+    if($true == false) {
         for ($i = 0; $i < count($data); $i++) {
             echo "<p>$data[$i]</p>\n";
         }
-    }else {
-        for ($i = 0; $i < count($data); $i++) {
-            echo "$data[$i]";
-        }
+    } elseif ($true == true) {
+        $ret = $data[0] . $data[1];
+        //echo $ret;
+        return $ret;
     }
 }
 

@@ -15,6 +15,7 @@ $data = [
     "Строка2"
 ];
 
-task1($data,true);
 
+$task1 = task1($data, true);
+echo $task1;
 // Конец первого задания
