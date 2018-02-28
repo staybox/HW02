@@ -11,9 +11,7 @@ require_once 'functions.php';
 
 $data = [
 
-    "Строка1",
-    "Строка2"
-];
+    "Строка1", "Строка2"];
 
 
 $task1 = task1($data, true);
