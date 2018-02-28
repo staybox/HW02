@@ -15,8 +15,8 @@ function task1($data, $true = false)
         }
     } elseif ($true == true) {
         $ret = $data[0] . $data[1];
+        return $ret;
     }
-    return $ret;
 }
 
 
