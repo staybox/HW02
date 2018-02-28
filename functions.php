@@ -6,12 +6,17 @@
  * Time: 17:14
  */
 
-function task1 ($data) {
+function task1 ($data,$true=NULL) {
 
-    for ($i=0; $i < count($data);$i++) {
-        echo "<p>$data[$i]</p>";
+    if(!isset($true)) {
+        for ($i = 0; $i < count($data); $i++) {
+            echo "<p>$data[$i]</p>\n";
+        }
+    }else {
+        for ($i = 0; $i < count($data); $i++) {
+            echo "$data[$i]";
+        }
     }
-
 }
 
 
