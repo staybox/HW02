@@ -6,3 +6,12 @@
  * Time: 17:14
  */
 
+function task1 ($data) {
+
+    for ($i=0; $i < count($data);$i++) {
+        echo "<p>$data[$i]</p>";
+    }
+
+}
+
+
