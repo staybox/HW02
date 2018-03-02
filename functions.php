@@ -65,3 +65,20 @@ function task2 ($num,$operation=null) {
 
 }
 
+/*
+function task3(string $operator, ...$data)
+{
+    task2($data, $operator);
+}*/
+
+function task3(){
+
+    $operator = func_get_arg(0);
+
+    $array = [];
+    for ($i = 1; $i < func_num_args(); $i++) {
+         array_push ($array,func_get_arg($i));
+    }
+
+    task2($array, $operator);
+}
