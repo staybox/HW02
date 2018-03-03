@@ -26,34 +26,41 @@ function task2 ($num,$operation=null) {
             $s=$num[0];
             unset($num[0]);
             foreach($num as $nums){
-                echo $s += $nums;
+                $s += $nums;
             }
+            echo $s;
             break;
         case "-":
             $s=$num[0];
             unset($num[0]);
             foreach($num as $nums){
-                echo $s -= $nums;
+                $s -= $nums;
             }
+            echo $s;
             break;
         case "*":
             $s=$num[0];
             unset($num[0]);
             foreach($num as $nums){
-                echo $s *= $nums;
+                $s *= $nums;
             }
+            echo $s;
             break;
         case "/":
             $s=$num[0];
             unset($num[0]);
+            $output = "";
             foreach($num as $nums){
                 if($nums == 0){
-                    echo "В массиве есть значение $nums. Деление на $nums запрещено.";
+                    echo $output = "В массиве есть значение $nums. Деление на $nums запрещено.";
                     break;
                 }else {
-                    echo $s /= $nums;
-                    echo "\n";
+                    $s /= $nums;
                 }
+            }
+            if ($output != "В массиве есть значение $nums. Деление на $nums запрещено."){
+                echo $s;
+                echo "\n";
             }
             break;
         case null:
