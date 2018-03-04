@@ -89,3 +89,29 @@ function task3(){
 
     task2($array, $operator);
 }
+
+
+function task4 (int $perem1, int $perem2){
+
+    echo "<table border =\"1\" style='border-collapse: collapse'>";
+    for ($row=1; $row <= $perem1; $row++) {
+        echo "<tr> \n";
+        for ($col=1; $col <= $perem2; $col++) {
+            $p = $col * $row;
+            if ($p%2 == 0) {
+                echo "<td>($p)</td> \n";
+            }elseif ($p%2 == 1) {
+                echo "<td>[$p]</td> \n";
+            }else {
+                echo "<td>$p</td> \n";
+            }
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+
+    if ($perem1 > 0 and $perem2 > 0) {
+
+        task4(--$perem1, --$perem2);
+    }
+}
