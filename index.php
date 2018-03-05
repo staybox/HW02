@@ -26,4 +26,8 @@ task2 ($num, "&");
 */
 //task3("/",1,2,4,5.2);
 
-task4(1,10);
+//task4(2,2);
+
+//task5("assa");
+
+echo OutputTask5(task5("assa"));

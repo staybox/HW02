@@ -115,3 +115,24 @@ function task4 (int $perem1, int $perem2){
         task4(--$perem1, --$perem2);
     }
 }
+
+
+function task5 (string $str) {
+
+    str_replace(' ', '', $str);
+    preg_replace('/[^A-Za-z0-9\-]/', '', $str);
+    strtolower($str);
+    if ($str == strrev($str)) {
+        return true;
+    }else {
+        return false;
+    }
+}
+
+function OutputTask5 (string $str) {
+    if ($str == true) {
+        return "Это палиндром";
+    }else {
+        return "Это не палиндром";
+    }
+}
