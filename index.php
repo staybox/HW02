@@ -49,6 +49,9 @@ echo $replace = str_replace("К", "", $task7);
 $file = "test.txt";
 echo task8($file);
 
+// Вторая реализация (происходит проверка и удаление любой заглавной буквы в строке)
+echo SecondRealizationTask8 ("Карл у Клары украл Кораллы");
+
 // Девятое задание
 $TextToFile = "Hello again!";
 

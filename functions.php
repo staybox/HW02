@@ -141,3 +141,16 @@ function task8 ($file) {
     return $section = file_get_contents("$file");
 }
 
+function SecondRealizationTask8 (string $SecondTask8) {
+    $chars = preg_split('//u', $SecondTask8, NULL, PREG_SPLIT_NO_EMPTY);
+    $my_str = [];
+    foreach ($chars as $char) {
+        if (mb_strtoupper($char, 'utf-8') === $char){
+            $repl = str_replace($char, " ", " ");
+            $my_str[] = $repl;
+        }else {
+            $my_str[] = $char;
+        }
+    }
+    return $imp = implode($my_str,"");
+}
