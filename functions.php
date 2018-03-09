@@ -119,9 +119,9 @@ function task4 (int $perem1, int $perem2){
 
 function task5 (string $str) {
 
-    str_replace(' ', '', $str);
-    preg_replace('/[^A-Za-z0-9\-]/', '', $str);
+    //str_replace(' ', '', $str);
     strtolower($str);
+    preg_replace('/[^A-Za-z0-9\-]/', '', $str);
     if ($str == strrev($str)) {
         return true;
     }else {
@@ -130,9 +130,14 @@ function task5 (string $str) {
 }
 
 function OutputTask5 (string $str) {
-    if ($str == true) {
+    if (task5($str) == true) {
         return "Это палиндром";
     }else {
         return "Это не палиндром";
     }
 }
+
+function task8 ($file) {
+    return $section = file_get_contents("$file");
+}
+
