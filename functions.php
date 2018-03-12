@@ -8,13 +8,14 @@
 
 function task1($data, $true = false)
 {
-    if ($true == false) {
-        for ($i = 0; $i < count($data); $i++) {
-            echo "<p>$data[$i]</p>\n";
-        }
-    } elseif ($true == true) {
-        return $data[0] . $data[1];
+    for ($i = 0; $i < count($data); $i++) {
+        echo "<p>", $data[$i], "</p>\n";
     }
+
+    if ($true == true) {
+        return implode(" ", $data);
+    }
+
     return null;
 }
 
