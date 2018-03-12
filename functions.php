@@ -18,47 +18,48 @@ function task1($data, $true = false)
     return null;
 }
 
-function task2 ($num,$operation=null) {
+function task2($num, $operation = null)
+{
 
-    switch ($operation){
+    switch ($operation) {
 
         case "+":
-            $s=$num[0];
+            $s = $num[0];
             unset($num[0]);
-            foreach($num as $nums){
+            foreach ($num as $nums) {
                 $s += $nums;
             }
             echo $s;
             break;
         case "-":
-            $s=$num[0];
+            $s = $num[0];
             unset($num[0]);
-            foreach($num as $nums){
+            foreach ($num as $nums) {
                 $s -= $nums;
             }
             echo $s;
             break;
         case "*":
-            $s=$num[0];
+            $s = $num[0];
             unset($num[0]);
-            foreach($num as $nums){
+            foreach ($num as $nums) {
                 $s *= $nums;
             }
             echo $s;
             break;
         case "/":
-            $s=$num[0];
+            $s = $num[0];
             unset($num[0]);
             $output = "";
-            foreach($num as $nums){
-                if($nums == 0){
+            foreach ($num as $nums) {
+                if ($nums == 0) {
                     echo $output = "В массиве есть значение $nums. Деление на $nums запрещено.";
                     break;
-                }else {
+                } else {
                     $s /= $nums;
                 }
             }
-            if ($output != "В массиве есть значение $nums. Деление на $nums запрещено."){
+            if ($output != "В массиве есть значение $nums. Деление на $nums запрещено.") {
                 echo $s;
                 echo "\n";
             }
@@ -78,31 +79,31 @@ function task3(string $operator, ...$data)
     task2($data, $operator);
 }*/
 
-function task3(){
-
+function task3()
+{
     $operator = func_get_arg(0);
 
     $array = [];
     for ($i = 1; $i < func_num_args(); $i++) {
-         array_push ($array,func_get_arg($i));
+        array_push($array, func_get_arg($i));
     }
 
     task2($array, $operator);
 }
 
 
-function task4 (int $perem1, int $perem2){
-
+function task4(int $perem1, int $perem2)
+{
     echo "<table border =\"1\" style='border-collapse: collapse'>";
-    for ($row=1; $row <= $perem1; $row++) {
+    for ($row = 1; $row <= $perem1; $row++) {
         echo "<tr> \n";
-        for ($col=1; $col <= $perem2; $col++) {
+        for ($col = 1; $col <= $perem2; $col++) {
             $p = $col * $row;
-            if ($p%2 == 0) {
+            if ($p % 2 == 0) {
                 echo "<td>($p)</td> \n";
-            }elseif ($p%2 == 1) {
+            } elseif ($p % 2 == 1) {
                 echo "<td>[$p]</td> \n";
-            }else {
+            } else {
                 echo "<td>$p</td> \n";
             }
         }
@@ -117,40 +118,66 @@ function task4 (int $perem1, int $perem2){
 }
 
 
-function task5 (string $str) {
-
-    //str_replace(' ', '', $str);
+function task5(string $str)
+{
     strtolower($str);
     preg_replace('/[^A-Za-z0-9\-]/', '', $str);
     if ($str == strrev($str)) {
         return true;
-    }else {
+    } else {
         return false;
     }
 }
 
-function OutputTask5 (string $str) {
+function OutputTask5(string $str)
+{
     if (task5($str) == true) {
         return "Это палиндром";
-    }else {
+    } else {
         return "Это не палиндром";
     }
 }
 
-function task8 ($file) {
+function task6()
+{
+    echo date('Y-m-d H:i:s');
+    echo $UnixTime = strtotime('2016-02-24 00:00:00'); //24.02.2016 00:00:00
+}
+
+function task7(string $task7)
+{
+    return $replace = str_replace("К", "", $task7);
+}
+
+function task8($file)
+{
     return $section = file_get_contents("$file");
 }
 
-function SecondRealizationTask8 (string $SecondTask8) {
+function SecondRealizationTask8(string $SecondTask8)
+{
     $chars = preg_split('//u', $SecondTask8, NULL, PREG_SPLIT_NO_EMPTY);
     $my_str = [];
     foreach ($chars as $char) {
-        if (mb_strtoupper($char, 'utf-8') === $char){
+        if (mb_strtoupper($char, 'utf-8') === $char) {
             $repl = str_replace($char, " ", " ");
             $my_str[] = $repl;
-        }else {
+        } else {
             $my_str[] = $char;
         }
     }
-    return $imp = implode($my_str,"");
+    return $imp = implode($my_str, "");
+}
+
+function task9(string $TextToFile)
+{
+// открываем файл, если файл не существует,
+//делается попытка создать его
+    $fp = fopen("file.txt", "w");
+
+// записываем в файл текст
+    fwrite($fp, $TextToFile);
+
+// закрываем
+    fclose($fp);
 }
